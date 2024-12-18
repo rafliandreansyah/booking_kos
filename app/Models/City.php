@@ -11,7 +11,7 @@ class City extends Model
     use HasFactory;
 
     protected $fillable = [
-        'city',
+        'name',
         'slug',
         'image'
     ];
