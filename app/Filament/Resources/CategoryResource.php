@@ -27,7 +27,7 @@ class CategoryResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->debounce(500)
-                    ->reactive()
+                    ->live(onBlur: true)
                     ->afterStateUpdated(function ($state, callable $set) {
                         $set('slug', Str::slug($state));
                     }),
@@ -35,7 +35,6 @@ class CategoryResource extends Resource
                     ->required(),
                 Forms\Components\FileUpload::make('image')
                     ->image()
-                    ->required()
                     ->columnSpanFull(),
             ]);
     }
@@ -44,7 +43,8 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('image')
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')

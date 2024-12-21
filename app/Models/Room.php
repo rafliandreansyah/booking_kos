@@ -18,6 +18,8 @@ class Room extends Model
         'price_per_month',
         'is_available',
         'boarding_house_id',
+        'capacity',
+        'description',
     ];
 
     public function boardingHouse(): BelongsTo

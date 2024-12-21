@@ -19,8 +19,8 @@ return new class extends Migration
             $table->longText('description');
             $table->double('price');
             $table->string('address');
-            $table->foreignId('city_id')->constrained();
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('city_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

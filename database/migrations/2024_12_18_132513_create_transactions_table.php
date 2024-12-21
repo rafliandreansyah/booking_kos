@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->integer('code');
-            $table->foreignId('room_id')->nullable()->constrained();
+            $table->foreignId('room_id')->nullable()->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->string('email');;
             $table->string('phone_number');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('duration');
             $table->double('total_amount')->nullable();
             $table->datetime('transaction_date')->nullable();
-            $table->foreignId('boarding_house_id')->constrained();
+            $table->foreignId('boarding_house_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

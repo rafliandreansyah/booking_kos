@@ -19,7 +19,8 @@ return new class extends Migration
             $table->integer('square_fit');
             $table->double('price_per_month');
             $table->boolean('is_available');
-            $table->foreignId('boarding_house_id')->constrained();
+            $table->integer('capacity');
+            $table->foreignId('boarding_house_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

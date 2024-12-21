@@ -18,7 +18,7 @@ class CityResource extends Resource
 {
     protected static ?string $model = City::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'icon-buildings';
 
     public static function form(Form $form): Form
     {
@@ -36,7 +36,6 @@ class CityResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->directory('cities')
-                    ->required()
                     ->columnSpanFull(),
             ]);
     }
@@ -45,7 +44,8 @@ class CityResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('image')
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')

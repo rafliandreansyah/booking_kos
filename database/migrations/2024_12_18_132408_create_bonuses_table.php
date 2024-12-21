@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('bonuses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image');
-            $table->longText('description');
-            $table->foreignId('boarding_house_id')->constrained();
+            $table->string('image')->nullable();
+            $table->longText('description')->nullable();
+            $table->foreignId('boarding_house_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
