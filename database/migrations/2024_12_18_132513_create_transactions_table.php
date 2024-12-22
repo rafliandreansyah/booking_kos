@@ -25,6 +25,7 @@ return new class extends Migration
             $table->double('total_amount')->nullable();
             $table->datetime('transaction_date')->nullable();
             $table->foreignId('boarding_house_id')->constrained()->cascadeOnDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

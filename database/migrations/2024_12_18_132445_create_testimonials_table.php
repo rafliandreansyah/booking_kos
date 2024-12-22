@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
             $table->string('photo')->nullable();
+            $table->string('name');
             $table->integer('rating');
             $table->longText('content')->nullable();
             $table->foreignId('boarding_house_id')->constrained()->cascadeOnDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

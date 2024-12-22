@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('is_available');
             $table->integer('capacity');
             $table->foreignId('boarding_house_id')->constrained()->cascadeOnDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
