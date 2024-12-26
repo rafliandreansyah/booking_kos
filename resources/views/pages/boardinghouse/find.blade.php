@@ -6,7 +6,8 @@
     </div>
     <div class="relative flex flex-col gap-[30px] my-[60px] px-5">
         <h1 class="font-bold text-[30px] leading-[45px] text-center">Explore Our<br>Beautiful Koskos</h1>
-        <form action="search-result.html" class="flex flex-col rounded-[30px] border border-[#F1F2F6] p-5 gap-6 bg-white">
+        <form action="{{ route('find.results') }}"
+            class="flex flex-col rounded-[30px] border border-[#F1F2F6] p-5 gap-6 bg-white">
             <div id="InputContainer" class="flex flex-col gap-[18px]">
                 <div class="flex flex-col w-full gap-2">
                     <p class="font-semibold">Name</p>
