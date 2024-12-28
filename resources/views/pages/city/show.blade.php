@@ -14,7 +14,7 @@
     </div>
     <div id="Header" class="relative flex items-center justify-between gap-2 px-5 mt-[18px]">
         <div class="flex flex-col gap-[6px]">
-            <h1 class="font-bold text-[32px] leading-[48px]">Kos in {{ $category->name }}</h1>
+            <h1 class="font-bold text-[32px] leading-[48px]">{{ $city->name }} City</h1>
             <p class="text-ngekos-grey">Tersedia {{ $boardingHouses->count() }} Kos</p>
         </div>
         <button class="flex flex-col items-center text-center shrink-0 rounded-[22px] p-[10px_20px] gap-2 bg-white">
@@ -46,13 +46,12 @@
                             <p class="text-sm text-ngekos-grey">4 People</p>
                         </div>
                         <hr class="border-[#F1F2F6]">
-                        <p class="font-semibold text-lg text-ngekos-orange">Rp
+                        <p class="font-semibold text-lg text-ngekos-orange"> Rp
                             {{ number_format($boardingHouse->price, 0, ',', '.') }}<span
                                 class="text-sm text-ngekos-grey font-normal">/bulan</span></p>
                     </div>
                 </div>
             </a>
         @endforeach
-
     </section>
 @endsection
