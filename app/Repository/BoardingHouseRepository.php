@@ -38,7 +38,7 @@ class BoardingHouseRepository implements BoardingHouseRepositoryInterface
 
     public function getBoardingHouseByBoardingHouseSlug($slug)
     {
-        return BoardingHouse::where('slug', $slug)->get();
+        return BoardingHouse::where('slug', $slug)->first();
     }
 
     public function getBoardingHouseByCitySlug($slug)
