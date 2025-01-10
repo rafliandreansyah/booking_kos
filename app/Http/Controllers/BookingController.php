@@ -82,4 +82,13 @@ class BookingController extends Controller
         $paymentUrl = \Midtrans\Snap::createTransaction($params)->redirect_url;
         return redirect($paymentUrl);
     }
+
+    public function success(Request $request)
+    {
+        $orderData = $this->transactionRepository->getBookingByCode($request->order_id);
+        if (!$orderData) {
+            return redirect('/');
+        }
+        return view('pages.booking.success', compact('orderData'));
+    }
 }

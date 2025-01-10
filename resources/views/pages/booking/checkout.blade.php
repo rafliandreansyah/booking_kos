@@ -302,9 +302,6 @@
 @endsection
 
 @section('scripts')
-    <script>
-        const
-    </script>
     <script src="{{ asset('assets/js/accodion.js') }}"></script>
     <script src="{{ asset('assets/js/checkout.js') }}"></script>
 @endsection

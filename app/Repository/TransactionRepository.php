@@ -61,4 +61,9 @@ class TransactionRepository implements TransactionRepositoryInterface
         $insurance = $subTotal * 0.01;
         return $subTotal + $tax + $insurance;
     }
+
+    public function getBookingByCode($code)
+    {
+        return Transaction::where('code', $code)->first();
+    }
 }
