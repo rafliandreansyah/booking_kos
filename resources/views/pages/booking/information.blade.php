@@ -76,9 +76,13 @@
                     <img src="{{ asset('assets/images/icons/profile-2user.svg') }}" class="w-5 h-5 flex shrink-0"
                         alt="icon">
                     <input type="text" name="name" id="name"
-                        class="appearance-none outline-none w-full font-semibold placeholder:text-ngekos-grey placeholder:font-normal"
-                        placeholder="Write your name">
+                        class="appearance-none outline-none w-full font-semibold placeholder:text-ngekos-grey placeholder:font-normal @error('name') border-red-500 @enderror"
+                        placeholder="Write your name" value="{{ old('name') }}">
                 </label>
+
+                @error('name')
+                    <p class="text-sm text-red-500">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex flex-col w-full gap-2 px-5">
                 <p class="font-semibold">Email Address</p>
@@ -86,9 +90,13 @@
                     class="flex items-center w-full rounded-full p-[14px_20px] gap-3 bg-white focus-within:ring-1 focus-within:ring-[#91BF77] transition-all duration-300">
                     <img src="{{ asset('assets/images/icons/sms.svg') }}" class="w-5 h-5 flex shrink-0" alt="icon">
                     <input type="email" name="email" id="email"
-                        class="appearance-none outline-none w-full font-semibold placeholder:text-ngekos-grey placeholder:font-normal"
-                        placeholder="Write your email">
+                        class="appearance-none outline-none w-full font-semibold placeholder:text-ngekos-grey placeholder:font-normal @error('email') border-red-500 @enderror"
+                        placeholder="Write your email" value="{{ old('email') }}">
                 </label>
+
+                @error('email')
+                    <p class="text-sm text-red-500">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex flex-col w-full gap-2 px-5">
                 <p class="font-semibold">Phone No</p>
@@ -96,9 +104,13 @@
                     class="flex items-center w-full rounded-full p-[14px_20px] gap-3 bg-white focus-within:ring-1 focus-within:ring-[#91BF77] transition-all duration-300">
                     <img src="{{ asset('assets/images/icons/call.svg') }}" class="w-5 h-5 flex shrink-0" alt="icon">
                     <input type="tel" name="phone_number" id="phone_number"
-                        class="appearance-none outline-none w-full font-semibold placeholder:text-ngekos-grey placeholder:font-normal"
-                        placeholder="Write your phone">
+                        class="appearance-none outline-none w-full font-semibold placeholder:text-ngekos-grey placeholder:font-normal @error('phone_number') border-red-500 @enderror"
+                        placeholder="Write your phone" value="{{ old('phone_number') }}">
                 </label>
+
+                @error('phone_number')
+                    <p class="text-sm text-red-500">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex items-center justify-between px-5">
                 <p class="font-semibold">Duration in Month</p>
@@ -109,6 +121,9 @@
                     <input id="Duration" type="text" value="1" name="duration"
                         class="appearance-none outline-none !bg-transparent w-[42px] text-center font-semibold text-[22px] leading-[33px]"
                         inputmode="numeric" pattern="[0-9]*">
+                    @error('duration')
+                        <p class="text-sm text-red-500">{{ $message }}</p>
+                    @enderror
                     <button type="button" id="Plus" class="w-12 h-12 flex-shrink-0">
                         <img src="{{ asset('assets/images/icons/plus.svg') }}" alt="icon">
                     </button>

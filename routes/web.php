@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/orders', [OrdersController::class, 'index'])->name('orders');
+Route::post('/orders', [OrdersController::class, 'show'])->name('show-order');
 Route::get('/find', [BoardingHouseController::class, 'find'])->name('find');
 Route::get('/find-results', [BoardingHouseController::class, 'findResult'])->name('find.results');
 Route::get('/category/{slug}', [CategoryController::class, 'show'])->name('category.show');

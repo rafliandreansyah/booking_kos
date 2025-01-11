@@ -57,7 +57,7 @@ class TransactionRepository implements TransactionRepositoryInterface
     public function calculateTotalAmount($pricePerMonth, $duration)
     {
         $subTotal = $pricePerMonth * $duration;
-        $tax = $subTotal * 0.12;
+        $tax = $subTotal * 0.11;
         $insurance = $subTotal * 0.01;
         return $subTotal + $tax + $insurance;
     }
@@ -65,5 +65,9 @@ class TransactionRepository implements TransactionRepositoryInterface
     public function getBookingByCode($code)
     {
         return Transaction::where('code', $code)->first();
+    }
+
+    public function getTransactionByCodeEmailPhone($code, $email, $phone) {
+        return Transaction::where('code', $code)->where('email', $email)->where('phone_number', $phone)->first();
     }
 }

@@ -179,7 +179,7 @@
             <div id="TabContent-Container">
                 @php
                     $subtotal = $room->price_per_month * $dataBooking['duration'];
-                    $tax = $subtotal * 0.12; // ppn 12%
+                    $tax = $subtotal * 0.11; // ppn 11%
                     $insurance = $subtotal * 0.01;
                     $total = $subtotal + $tax + $insurance;
                     $downPayment = $total * 0.3;
