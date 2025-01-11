@@ -7,12 +7,12 @@
                 <span class="font-semibold text-sm text-white">Discover</span>
             </a>
             <a href="{{ route('orders') }}" class="flex flex-col items-center text-center gap-2">
-                <img src="{{ Illuminate\Support\Str::endsWith(Route::currentRouteName(), 'orders') ? asset('assets/images/icons/note-favorite-green.svg') : asset('assets/images/icons/note-favorite.svg') }}"
+                <img src="{{ request()->routeIs('orders') ? asset('assets/images/icons/note-favorite-green.svg') : asset('assets/images/icons/note-favorite.svg') }}"
                     class="w-8 h-8 flex shrink-0" alt="icon">
                 <span class="font-semibold text-sm text-white">Orders</span>
             </a>
             <a href="{{ route('find') }}" class="flex flex-col items-center text-center gap-2">
-                <img src="{{ Illuminate\Support\Str::endsWith(Route::currentRouteName(), 'find') ? asset('assets/images/icons/search-status-green.svg') : asset('assets/images/icons/search-status.svg') }}"
+                <img src="{{ request()->routeIs('find') ? asset('assets/images/icons/search-status-green.svg') : asset('assets/images/icons/search-status.svg') }}"
                     class="w-8 h-8 flex shrink-0" alt="icon">
                 <span class="font-semibold text-sm text-white">Find</span>
             </a>
