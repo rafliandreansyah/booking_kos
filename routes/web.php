@@ -21,4 +21,4 @@ Route::get('/booking/{slug}/information', [BookingController::class, 'informatio
 Route::post('/booking/{slug}/information/save', [BookingController::class, 'saveInformation'])->name('information.save');
 Route::get('/booking/{slug}/information/checkout', [BookingController::class, 'checkout'])->name('checkout');
 Route::get('/booking/{slug}/payment', [BookingController::class, 'payment'])->name('payment');
-Route::get('/booking/success', [BookingController::class, 'success'])->name('booking-success');
+Route::get('/payment/success', [BookingController::class, 'success'])->name('booking-success');
