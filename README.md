@@ -2,6 +2,10 @@
 
 This is a Laravel-based application designed for managing and booking kos (rented rooms). The frontend uses Tailwind CSS for styling, ensuring a clean and responsive design. This documentation will guide you through the installation and running process on your local machine.
 
+![Booking Kos](https://github.com/user-attachments/assets/c82b33a5-b3a6-4d5d-a163-f60d628fc398)
+
+
+
 ## Features
 - Backend: Laravel
 - Dashboard: Filament
