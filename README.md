@@ -9,6 +9,7 @@ This is a Laravel-based application designed for managing and booking kos (rente
 - User authentication and role management
 - Room availability and booking management
 - Design for mobile devices
+- Payment Gateway with midtrans
 
 ---
 
@@ -61,6 +62,10 @@ Before starting, ensure you have:
    DB_DATABASE=booking_kos
    DB_USERNAME=your_username_db
    DB_PASSWORD=your_password_db
+   MIDTRANS_SERVER_KEY=your_midtrans_server_key
+   MIDTRANS_IS_PRODUCTION=false
+   MIDTRANS_IS_SANITIZED=true
+   MIDTRANS_IS_3DS=true
    ```
 
 5. **Generate Application Key**
