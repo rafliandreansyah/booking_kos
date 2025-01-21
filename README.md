@@ -4,6 +4,7 @@ This is a Laravel-based application designed for managing and booking kos (rente
 
 ## Features
 - Backend: Laravel
+- Dashboard: Filament
 - Frontend: Tailwind CSS
 - User authentication and role management
 - Room availability and booking management
